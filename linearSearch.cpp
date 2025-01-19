@@ -1,24 +1,26 @@
 #include<iostream>
 using namespace std;
-bool search(int arr[], int size, int target){
-    if (size == 0) return false;
-    if (arr[0] == target) return true;
-
-    bool restPart = search(arr+1, size-1, target);
-    return restPart;
+bool search(int arr[], int size, int key){
+      for(int i=0; i<size; i++){
+        if(arr[i]==key){
+            return 1;
+        }
+      }
+      return 0;
 }
 int main(){
-    int arr[5] = {4,5,8,2,1};
-    int size = 5;
-    int target;
-    cout<<"Enter target";
-    cin>>target;
-    bool ans = search(arr, size, target);
+    int arr[10] = {5,7,-2,10,22,-4,0,5,22,1};
+    int key;
+    cout<<"Enter the element to search for ";
+    cin>>key;
 
-    if(ans){
-        cout<<"target is found in given array";
+    bool found = search(arr, 10, key);
+    
+    if( found ){
+        cout<<"key is present"<<endl;
+
     }
-    else {
-         cout<<"target is not found in given array";
+    else{
+        cout<<"key is absent "<<endl;
     }
 }
