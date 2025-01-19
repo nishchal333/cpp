@@ -1,13 +1,11 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 int main(){
-    int n , digit, ans=0;
+    int n,r;
     cin>>n;
-    while(n!=0){
-        digit = n%10;
-        if(ans > INT32_MAX/10 || INT32_MIN)
-        ans = ans*10 + digit;
+    while(n>=1){
+        r=n%10;
         n=n/10;
+        cout<<r;
     }
-    cout<<ans;
 }
